@@ -14,7 +14,10 @@ class Router{
 	
 	public static function resolve($request_url)
 	{
-		$function_filename = realpath(DOCUMENT_ROOT . '/API/REST' . $request_url . '.php');
+		$request_url = explode('/', $request_url);
+		$function_classname= end($request_url);
+		
+		$function_filename = realpath(DOCUMENT_ROOT . '/API/REST/' . $function_classname. '.php');
 		
 		// Check if file
 		//		- exist
@@ -26,8 +29,7 @@ class Router{
 		include_with_check($function_filename);
 		
 		// Get Classname and add namespace
-		$function_filename_explode = explode('/', $request_url);
-		$function_classname = '\\API\\REST\\' . array_pop($function_filename_explode);
+		$function_classname = '\\API\\REST\\' . $function_classname;
 		
 		return new $function_classname();
 	}

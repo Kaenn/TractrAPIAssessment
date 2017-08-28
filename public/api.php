@@ -11,6 +11,7 @@ use \API\HTTPResult;
 use \API\Output;
 use \API\Router;
 
+error_log('testGlennn');
 try{
 	try{
 		DEFINE('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
