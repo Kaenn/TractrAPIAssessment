@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/public/api.php
+RewriteCond %{REQUEST_URI} !^/api/.+
+RewriteCond %{REQUEST_URI} !^/public/.*
+RewriteRule (.*) public/react/index.html
+
+RewriteCond %{REQUEST_URI} ^/api/.+
+RewriteRule (.*) public/api.php
