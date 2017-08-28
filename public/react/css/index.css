@@ -35,6 +35,19 @@ div#filter-list-toolbar{
 	padding: 5px 0px;
 }
 
+div#filter-list-toolbar > span{
+	margin: 0px 3px;
+}
+
 div#videos-container{
 	padding: 5px 0px;
+}
+
+div.video-description{
+	border-top : 1px solid grey;
+	padding : 5px 0px;
+}
+
+span.remove-filter{
+	cursor : pointer;
 }

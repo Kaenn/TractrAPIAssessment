@@ -8,7 +8,7 @@ namespace API\ParamsType;
 
 include_with_check(DOCUMENT_ROOT . '/API/ParamsType/BasicParamsType.php');
 
-class String implements BasicParamsType{
+class StringP implements BasicParamsType{
 	
 	public static function validation($value)
 	{

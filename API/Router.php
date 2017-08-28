@@ -15,7 +15,10 @@ class Router{
 	public static function resolve($request_url)
 	{
 		$request_url = explode('/', $request_url);
-		$function_classname= end($request_url);
+		$request_url = end($request_url);
+		$request_url = explode('?', $request_url);
+		reset($request_url);
+		$function_classname = current($request_url);
 		
 		$function_filename = realpath(DOCUMENT_ROOT . '/API/REST/' . $function_classname. '.php');
 		

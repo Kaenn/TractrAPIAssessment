@@ -12,6 +12,7 @@ include_with_check(DOCUMENT_ROOT . '/API/Exception/ExceptionHTTP.php');
 
 use \API\Exception\ExceptionHTTP;
 use \API\HTTPResult;
+use \API\Enum\HTTPMethod;
 
 abstract class BasicRESTFunction{
 	
@@ -41,12 +42,15 @@ abstract class BasicRESTFunction{
 	 * @throws ExceptionHTTP
 	 * @return unknown
 	 */
-	public function resolve($http_method,$params)
+	public function resolve($http_method, $params_json, $params_get)
 	{
 		if(!$this->requestRespectMethod($http_method))
 			throw new ExceptionHTTP(405);
 		
-		$this->params = $params;
+		$this->params = $params_json;
+		if($http_method === HTTPMethod::GET)
+			$this->params = $params_get;
+		
 		// Sanitize not necessary params 
 		$this->sanitizeParams();
 		

@@ -11,7 +11,6 @@ use \API\HTTPResult;
 use \API\Output;
 use \API\Router;
 
-error_log('testGlennn');
 try{
 	try{
 		DEFINE('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
@@ -38,7 +37,7 @@ try{
 		$function_class = Router::resolve($_SERVER['REQUEST_URI']);
 		
 		// Resolve the request
-		$result = $function_class->resolve($_SERVER['REQUEST_METHOD'], $json_params);
+		$result = $function_class->resolve($_SERVER['REQUEST_METHOD'], $json_params, $_GET);
 	}catch(ExceptionExternal $e){
 		$result = new \HTTPResult($e->getResult(), $e->getHTTPCode());
 	}catch(ExceptionHTTP $e){
