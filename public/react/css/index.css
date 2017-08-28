@@ -1,0 +1,40 @@
+div.video-title{
+	padding-right : 20px;
+}
+
+div.video-title span{
+	font-size : 20px;
+	font-weight : bold;
+	color : black;
+}
+
+div.video-author span{
+	color : grey;
+	font-size : 12px;
+}
+
+div.miniature-video{
+	padding : 3px;
+	cursor : pointer;
+	display : inline-block;
+}
+
+div.miniature-video:hover{
+	background-color : #ccdefc;
+}
+
+div#filter-toolbar{
+	padding: 5px 0px;
+}
+
+div#filter-form-toolbar{
+	padding: 5px 0px;
+}
+
+div#filter-list-toolbar{
+	padding: 5px 0px;
+}
+
+div#videos-container{
+	padding: 5px 0px;
+}
